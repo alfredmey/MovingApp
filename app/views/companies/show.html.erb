@@ -1,0 +1,49 @@
+<div class="col-lg-2">
+</div>
+<div class="col-lg-8">
+  <div class="well bs-component">
+
+    <%- model_class = Company -%>
+    <div class="page-header">
+      <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+    </div>
+
+    <dl class="dl-horizontal">
+      <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+      <dd><%= @company.name %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+      <dd><%= @company.address %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+      <dd><%= @company.city %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+      <dd><%= @company.state %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:zip) %>:</strong></dt>
+      <dd><%= @company.zip %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:agent_code) %>:</strong></dt>
+      <dd><%= @company.agent_code %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+      <dd><%= @company.phone %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
+      <dd><%= @company.fax %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+      <dd><%= @company.email %></dd>
+    </dl>
+
+    <div class="form-actions">
+      <%= link_to t('.back', :default => t("helpers.links.back")),
+                  companies_path, :class => 'btn'  %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_company_path(@company), :class => 'btn btn-primary' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  company_path(@company),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'btn btn-danger' %>
+    </div>
+
+
+  </div>
+</div>
+<div class="col-lg-2">
+</div>
+
