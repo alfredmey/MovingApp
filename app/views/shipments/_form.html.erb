@@ -1,0 +1,33 @@
+<%= simple_form_for(@shipment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :wieght %>
+    <%= f.input :pack_date %>
+    <%= f.input :pick_date %>
+    <%= f.input :deliver_date %>
+    <%= f.input :company_id %>
+    <%= f.input :discount %>
+    <%= f.input :notes %>
+    <%= f.input :user_id %>
+    <%= f.input :origin_id %>
+    <%= f.input :dest_id %>
+    <%= f.input :origin_agent %>
+    <%= f.input :dest_agent %>
+    <%= f.input :carrier %>
+    <%= f.input :reg_no %>
+    <%= f.input :atlas_no %>
+    <%= f.input :gbl_no %>
+    <%= f.input :move_type %>
+    <%= f.input :miles %>
+    <%= f.input :survey_date %>
+    <%= f.input :hauler %>
+    <%= f.input :surveyor %>
+    <%= f.input :booker %>
+    <%= f.input :apu %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
