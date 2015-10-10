@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :locations
   resources :shipments
+
   resources :companies
   devise_for :users
 

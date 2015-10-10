@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151010043338) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
