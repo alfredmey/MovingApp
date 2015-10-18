@@ -2,6 +2,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.fields_for :location do |builder| %>
+      <%= render "shipments/partials/location", :f => builder %>
+      <%= render "shipments/partials/location", :f => builder %>
+    <% end %>
     <%= f.input :wieght %>
     <%= f.input :pack_date %>
     <%= f.input :pick_date %>

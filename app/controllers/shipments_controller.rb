@@ -69,6 +69,6 @@ class ShipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipment_params
-      params.require(:shipment).permit(:wieght, :pack_date, :pick_date, :deliver_date, :company_id, :discount, :notes, :user_id, :origin_id, :dest_id, :origin_agent, :dest_agent, :carrier, :reg_no, :atlas_no, :gbl_no, :move_type, :miles, :survey_date, :hauler, :surveyor, :booker, :apu)
+      params.require(:shipment).permit(:wieght, :pack_date, :pick_date, :deliver_date, :company_id, :discount, :notes, :user_id, :origin_id, :dest_id, :origin_agent, :dest_agent, :carrier, :reg_no, :atlas_no, :gbl_no, :move_type, :miles, :survey_date, :hauler, :surveyor, :booker, :apu, locations_attributes: [:name, :address, :city, :state, :zip, :phone, :cell, :notes ])
     end
 end
