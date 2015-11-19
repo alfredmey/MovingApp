@@ -1,37 +1,47 @@
-<%= simple_form_for(@shipment) do |f| %>
+<%= simple_nested_form_for(@shipment) do |f| %>
   <%= f.error_notification %>
 
+  <%= f.input :company_id, :as => :select, :collection => Company.all.map {|p| [p.name, p.id]}, :prompt => "Select"  %>
+
   <div class="form-inputs">
-    <%= f.fields_for :location do |builder| %>
-      <%= render "shipments/partials/location", :f => builder %>
-      <%= render "shipments/partials/location", :f => builder %>
-    <% end %>
-    <%= f.input :wieght %>
-    <%= f.input :pack_date %>
-    <%= f.input :pick_date %>
-    <%= f.input :deliver_date %>
-    <%= f.input :company_id %>
-    <%= f.input :discount %>
-    <%= f.input :notes %>
-    <%= f.input :user_id %>
-    <%= f.input :origin_id %>
-    <%= f.input :dest_id %>
-    <%= f.input :origin_agent %>
-    <%= f.input :dest_agent %>
-    <%= f.input :carrier %>
-    <%= f.input :reg_no %>
-    <%= f.input :atlas_no %>
-    <%= f.input :gbl_no %>
-    <%= f.input :move_type %>
-    <%= f.input :miles %>
-    <%= f.input :survey_date %>
-    <%= f.input :hauler %>
-    <%= f.input :surveyor %>
-    <%= f.input :booker %>
-    <%= f.input :apu %>
+    <div class="row">
+      <div class="well col-md-3">
+        <h3>Details</h3>
+        <%= render "shipments/partials/details", :f => f %>
+      </div>
+      <div class="well col-md-5">
+        <h3>Origin</h3>
+          <%= render "shipments/partials/o_location", :f => f %>
+      </div>
+      <div class="well col-md-3">
+        <h3>Dates</h3>
+        <%= render "shipments/partials/dates", :f => f %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="well col-md-3">
+        <h3>Agents</h3>
+        <%= render "shipments/partials/agents", :f => f %>
+      </div>
+      <div class="well col-md-5">
+        <h3>Destination</h3>
+        <%= render "shipments/partials/d_location", :f => f %>
+      </div>
+      <div class="well col-md-3">
+        <h3>Notes</h3>
+        <%= f.input :notes %>
+      </div>
+    </div>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= link_to 'Back', shipments_path, :class => 'btn btn-danger' %><%= f.button :submit, :class => 'pull-right btn-success' %>
   </div>
 <% end %>
+<script>
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>

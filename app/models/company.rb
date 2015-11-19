@@ -1,3 +1,3 @@
 class Company < ActiveRecord::Base
-  has_and_belongs_to_many :shipments
+  has_many :shipments
 end

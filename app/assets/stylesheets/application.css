@@ -14,4 +14,9 @@
  *= require_self
  *= require cerulean/loader
  *= require cerulean/bootswatch
+ *= require jquery-ui
  */
+
+.well {
+    margin:15px;
+}

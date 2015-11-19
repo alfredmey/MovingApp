@@ -1,6 +1,6 @@
 
 <% if user_signed_in? && current_user.admin? %>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Moving App</a>
@@ -8,6 +8,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><%= link_to 'Dash Board', home_index_path, :method=>'get' %></li>
+            <li><%= link_to 'Shipments', shipments_path, :method=>'get' %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">

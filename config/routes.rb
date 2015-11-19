@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :locations
-  resources :shipments
+  resources :shipments do
+    collection do
+      get :shipment_search
+    end
+  end
   resources :companies
 
   devise_for :users

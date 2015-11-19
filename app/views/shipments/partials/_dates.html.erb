@@ -1,0 +1,26 @@
+<div>
+  <div class="form-group string shipment_pack_date">
+    <label class="string control-label" for="shipment_pack_date">Pack Date</label>
+    <%= f.date_field :pack_date, :class => 'input-sm form-control', required: false  %>
+  </div>
+  <div class="form-group string shipment_pick_date">
+    <label class="string control-label" for="shipment_pick_date">Pick Date</label>
+    <%= f.date_field :pick_date, :class => 'input-sm form-control', required: false  %>
+  </div>
+  <div class="form-group string required shipment_deliver_date">
+    <label class="string control-label" for="shipment_deliver_date">Deliver Date</label>
+    <%= f.date_field :deliver_date, :class => 'input-sm form-control', required: false  %>
+  </div>
+  <div class="form-group string required shipment_miles">
+    <label class="string control-label" for="shipment_miles">Miles</label>
+    <%= f.text_field :miles, :class => 'input-sm form-control', required: false %>
+  </div>
+  <div class="form-group string required shipment_survey_date">
+    <label class="string control-label" for="shipment_survey_date">Survey Date</label>
+    <%= f.date_field :survey_date, :class => 'input-sm form-control', required: false  %>
+  </div>
+  <div class="form-group string required shipment_scan_date">
+    <label class="string control-label" for="shipment_scan_date">Scan Date</label>
+    <%= f.date_field :scan_date, :class => 'input-sm form-control', required: false  %>
+  </div>
+</div>

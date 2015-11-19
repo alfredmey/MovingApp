@@ -1,119 +1,170 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Wieght:</strong>
-  <%= @shipment.wieght %>
-</p>
 
-<p>
-  <strong>Pack date:</strong>
-  <%= @shipment.pack_date %>
-</p>
 
-<p>
-  <strong>Pick date:</strong>
-  <%= @shipment.pick_date %>
-</p>
+<div class="col-md-10 col-md-offset-1 well">
+  <div class="row">
+    <div class="col-md-3">
 
-<p>
-  <strong>Deliver date:</strong>
-  <%= @shipment.deliver_date %>
-</p>
+      <h3>Details</h3>
+      <table class="table">
+        <tr>
+          <th align="left">GBL No:</th>
+          <td><%= @shipment.gbl_no %></td>
+        </tr>
+        <tr>
+          <th align="left">Atlas No:</th>
+          <td><%= @shipment.atlas_no %></td>
+        </tr>
+        <tr>
+          <th align="left">Reg No:</th>
+          <td><%= @shipment.reg_no %></td>
+        </tr>
+        <tr>
+          <th align="left">Carrier:</th>
+          <td><%= @shipment.carrier %></td>
+        </tr>
+        <tr>
+        <th align="left">Weight:</th>
+        <td><%= @shipment.weight %></td>
+      </tr>
+        <tr>
+          <th align="left">Type:</th>
+          <td><%= @shipment.move_type %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h3>Origin</h3>
+      <table class="table">
+        <tr>
+          <th align="left">Name:</th>
+          <td><%= @shipment.o_name %></td>
+        </tr>
+        <tr>
+          <th align="left">Address:</th>
+          <td><%= @shipment.o_address %></td>
+        </tr>
+        <tr>
+          <th align="left">City, St. Zip:</th>
+          <td><%= @shipment.o_city %>, <%= @shipment.o_state %>. <%= @shipment.o_zip %></td>
+        </tr>
+        <tr>
+          <th align="left">Phone:</th>
+          <td><%= @shipment.o_phone %></td>
+        </tr>
+        <tr>
+          <th align="left">Cell:</th>
+          <td><%= @shipment.o_cell %></td>
+        </tr>
+        <tr>
+          <th align="left">Notes:</th>
+          <td><%= @shipment.o_notes %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <h3>Dates</h3>
+      <table class="table">
+        <tr>
+          <th align="left">Pack Date:</th>
+          <td><%= @shipment.pack_date.strftime("%a, %b %d %Y") %></td>
+        </tr>
+        <tr>
+          <th align="left">Pick Date:</th>
+          <td><%= @shipment.pick_date.strftime("%a, %b %d %Y") %></td>
+        </tr>
+        <tr>
+          <th align="left">Deliver Date:</th>
+          <td><%= @shipment.deliver_date.strftime("%a, %b %d %Y") %></td>
+        </tr>
+        <tr>
+          <th align="left">Survey Date:</th>
+          <td><%= @shipment.survey_date.strftime("%a, %b %d %Y") %></td>
+        </tr>
+        <tr>
+          <th align="left">Scan Date:</th>
+          <td><%= @shipment.scan_date.strftime("%a, %b %d %Y") %></td>
+        </tr>
+        <tr>
+          <th align="left">Miles:</th>
+          <td><%= @shipment.miles %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Agents</h3>
+      <table class="table">
+        <tr>
+          <th align="left">Discount:</th>
+          <td><%= @shipment.discount %></td>
+        </tr>
+        <tr>
+          <th align="left">Origin Agent:</th>
+          <td><%= @shipment.origin_agent %></td>
+        </tr>
+        <tr>
+          <th align="left">Dest Agent:</th>
+          <td><%= @shipment.dest_agent %></td>
+        </tr>
+        <tr>
+          <th align="left">Hauler:</th>
+          <td><%= @shipment.hauler %></td>
+        </tr>
+        <tr>
+          <th align="left">Surveyor:</th>
+          <td><%= @shipment.surveyor %></td>
+        </tr>
+        <tr>
+          <th align="left">Booker:</th>
+          <td><%= @shipment.booker %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h3>Destination</h3>
+      <table class="table">
+        <tr>
+          <th align="left">Name:</th>
+          <td><%= @shipment.d_name %></td>
+        </tr>
+        <tr>
+          <th align="left">Address:</th>
+          <td><%= @shipment.d_address %></td>
+        </tr>
+        <tr>
+          <th align="left">City, St. Zip:</th>
+          <td><%= @shipment.d_city %>, <%= @shipment.d_state %>. <%= @shipment.d_zip %></td>
+        </tr>
+        <tr>
+          <th align="left">Phone:</th>
+          <td><%= @shipment.d_phone %></td>
+        </tr>
+        <tr>
+          <th align="left">Cell:</th>
+          <td><%= @shipment.d_cell %></td>
+        </tr>
+        <tr>
+          <th align="left">Notes:</th>
+          <td><%= @shipment.d_notes %></td>
+        </tr>
+      </table>
 
-<p>
-  <strong>Company:</strong>
-  <%= @shipment.company_id %>
-</p>
+    </div>
+    <div class="col-md-3">
+      <h3>Notes</h3>
+      <p>
+        <%= @shipment.notes %>
+      </p>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <%= link_to 'Edit', edit_shipment_path(@shipment), :class => 'btn btn-success pull-right' %>
+    <%= link_to 'Back', shipments_path, :class => 'btn btn-danger' %>
+  </div>
 
-<p>
-  <strong>Discount:</strong>
-  <%= @shipment.discount %>
-</p>
+</div>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @shipment.notes %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @shipment.user_id %>
-</p>
-
-<p>
-  <strong>Origin:</strong>
-  <%= @shipment.origin_id %>
-</p>
-
-<p>
-  <strong>Dest:</strong>
-  <%= @shipment.dest_id %>
-</p>
-
-<p>
-  <strong>Origin agent:</strong>
-  <%= @shipment.origin_agent %>
-</p>
-
-<p>
-  <strong>Dest agent:</strong>
-  <%= @shipment.dest_agent %>
-</p>
-
-<p>
-  <strong>Carrier:</strong>
-  <%= @shipment.carrier %>
-</p>
-
-<p>
-  <strong>Reg no:</strong>
-  <%= @shipment.reg_no %>
-</p>
-
-<p>
-  <strong>Atlas no:</strong>
-  <%= @shipment.atlas_no %>
-</p>
-
-<p>
-  <strong>Gbl no:</strong>
-  <%= @shipment.gbl_no %>
-</p>
-
-<p>
-  <strong>Move type:</strong>
-  <%= @shipment.move_type %>
-</p>
-
-<p>
-  <strong>Miles:</strong>
-  <%= @shipment.miles %>
-</p>
-
-<p>
-  <strong>Survey date:</strong>
-  <%= @shipment.survey_date %>
-</p>
-
-<p>
-  <strong>Hauler:</strong>
-  <%= @shipment.hauler %>
-</p>
-
-<p>
-  <strong>Surveyor:</strong>
-  <%= @shipment.surveyor %>
-</p>
-
-<p>
-  <strong>Booker:</strong>
-  <%= @shipment.booker %>
-</p>
-
-<p>
-  <strong>Apu:</strong>
-  <%= @shipment.apu %>
-</p>
-
-<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
-<%= link_to 'Back', shipments_path %>

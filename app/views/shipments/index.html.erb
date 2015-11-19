@@ -1,71 +1,26 @@
+<div class="col-lg-1">
+</div>
+<div class="col-lg-10">
+  <div class="well bs-component">
 <p id="notice"><%= notice %></p>
+    <h1 class="pull-left">Shipments</h1>
 
-<h1>Listing Shipments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Wieght</th>
-      <th>Pack date</th>
-      <th>Pick date</th>
-      <th>Deliver date</th>
-      <th>Company</th>
-      <th>Discount</th>
-      <th>Notes</th>
-      <th>User</th>
-      <th>Origin</th>
-      <th>Dest</th>
-      <th>Origin agent</th>
-      <th>Dest agent</th>
-      <th>Carrier</th>
-      <th>Reg no</th>
-      <th>Atlas no</th>
-      <th>Gbl no</th>
-      <th>Move type</th>
-      <th>Miles</th>
-      <th>Survey date</th>
-      <th>Hauler</th>
-      <th>Surveyor</th>
-      <th>Booker</th>
-      <th>Apu</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shipments.each do |shipment| %>
-      <tr>
-        <td><%= shipment.wieght %></td>
-        <td><%= shipment.pack_date %></td>
-        <td><%= shipment.pick_date %></td>
-        <td><%= shipment.deliver_date %></td>
-        <td><%= shipment.company_id %></td>
-        <td><%= shipment.discount %></td>
-        <td><%= shipment.notes %></td>
-        <td><%= shipment.user_id %></td>
-        <td><%= shipment.origin_id %></td>
-        <td><%= shipment.dest_id %></td>
-        <td><%= shipment.origin_agent %></td>
-        <td><%= shipment.dest_agent %></td>
-        <td><%= shipment.carrier %></td>
-        <td><%= shipment.reg_no %></td>
-        <td><%= shipment.atlas_no %></td>
-        <td><%= shipment.gbl_no %></td>
-        <td><%= shipment.move_type %></td>
-        <td><%= shipment.miles %></td>
-        <td><%= shipment.survey_date %></td>
-        <td><%= shipment.hauler %></td>
-        <td><%= shipment.surveyor %></td>
-        <td><%= shipment.booker %></td>
-        <td><%= shipment.apu %></td>
-        <td><%= link_to 'Show', shipment %></td>
-        <td><%= link_to 'Edit', edit_shipment_path(shipment) %></td>
-        <td><%= link_to 'Destroy', shipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="pull-right" style="margin-top: 30px; padding-right: 20px;">
+      <%= form_tag shipment_search_shipments_path, :remote => true, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search_term, params[:search_term], :class => "search-field" %>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
+          </p>
+      <% end %>
+    </div>
+<%= render :partial => 'shipments/partials/shipments_partial' %>
 
 <br>
 
 <%= link_to 'New Shipment', new_shipment_path %>
+</div>
+
+</div>
+<div class="col-lg-2">
+</div>

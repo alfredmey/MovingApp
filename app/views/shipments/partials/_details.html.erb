@@ -1,0 +1,26 @@
+<div class="form-group string shipment_gbl_no">
+  <label class="string control-label" for="shipment_gbl_no">GBL #</label>
+  <%= f.text_field :gbl_no, :class => 'input-sm form-control', required: false  %>
+</div>
+<div class="form-group string shipment_atlas_no">
+  <label class="string control-label" for="shipment_atlas_no">Atlas #</label>
+  <%= f.text_field :atlas_no, :class => 'input-sm form-control', required: false  %>
+</div>
+<div class="form-group string shipment_reg_no">
+  <label class="string control-label" for="shipment_reg_no">Reg #</label>
+  <%= f.text_field :reg_no, :class => 'input-sm form-control', required: false  %>
+</div>
+<div class="form-group string shipment_carrier">
+  <label class="string control-label" for="shipment_carrier">Carrier</label>
+  <%= f.text_field :carrier, :class => 'input-sm form-control', required: false %>
+</div>
+<div class="form-group string required shipment_weight">
+  <label class="string control-label" for="shipment_weight">Weight</label>
+  <%= f.text_field :weight, :class => 'input-sm form-control', required: false  %>
+</div>
+<div class="form-group select move_type">
+  <label class="select control-label" for="move_type">Move Type</label>
+  <%= f.select :move_type, Shipment::SHIPMENT_TYPES, {}, :class => 'select input-sm form-control', :prompt => "select"  %>
+</div>
+
+

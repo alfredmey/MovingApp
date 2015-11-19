@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010160303) do
+ActiveRecord::Schema.define(version: 20151119040432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,27 +30,8 @@ ActiveRecord::Schema.define(version: 20151010160303) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.string   "phone"
-    t.string   "cell"
-    t.text     "notes"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "full_address"
-  end
-
   create_table "shipments", force: :cascade do |t|
-    t.integer  "wieght"
-    t.datetime "pack_date"
-    t.datetime "pick_date"
-    t.datetime "deliver_date"
+    t.integer  "weight"
     t.integer  "company_id"
     t.string   "discount"
     t.text     "notes"
@@ -65,13 +46,33 @@ ActiveRecord::Schema.define(version: 20151010160303) do
     t.string   "gbl_no"
     t.string   "move_type"
     t.integer  "miles"
-    t.datetime "survey_date"
     t.string   "hauler"
     t.string   "surveyor"
     t.string   "booker"
     t.boolean  "apu"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "o_name"
+    t.string   "o_phone"
+    t.string   "o_cell"
+    t.string   "o_notes"
+    t.string   "o_address"
+    t.string   "o_city"
+    t.string   "o_state"
+    t.integer  "o_zip"
+    t.string   "d_name"
+    t.string   "d_phone"
+    t.string   "d_cell"
+    t.string   "d_notes"
+    t.string   "d_address"
+    t.string   "d_city"
+    t.string   "d_state"
+    t.integer  "d_zip"
+    t.date     "pack_date"
+    t.date     "pick_date"
+    t.date     "deliver_date"
+    t.date     "survey_date"
+    t.date     "scan_date"
   end
 
   create_table "users", force: :cascade do |t|
