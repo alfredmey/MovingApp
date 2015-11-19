@@ -1,7 +1,7 @@
 class CreateShipments < ActiveRecord::Migration
   def change
     create_table :shipments do |t|
-      t.integer :wieght
+      t.integer :weight
       t.datetime :pack_date
       t.datetime :pick_date
       t.datetime :deliver_date
